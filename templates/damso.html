@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albums de Damso</title>
+    <link rel="stylesheet" href="/assets/damso.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="/" class="retour">← Retour</a>
+            <h1>Albums de Damso</h1>
+        </div>
+
+        <div class="albums">
+            {{range .Albums}}
+            <div class="album">
+                {{if .Image}}
+                <img src="{{.Image}}" alt="{{.Nom}}">
+                {{else}}
+                <div class="no-image">Pas d'image</div>
+                {{end}}
+                <div class="info">
+                    <h3>{{.Nom}}</h3>
+                    <p class="date">📅 {{.DateSortie}}</p>
+                    <p class="nombre">🎵 {{.NombreMusiques}} titres</p>
+                </div>
+            </div>
+            {{end}}
+        </div>
+
+        <div class="footer">
+            <a href="/track/laylow" class="lien">Découvrir Maladresse (Laylow)</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Nom}} - {{.Artiste}}</title>
+    <link rel="stylesheet" href="/assets/maladresse.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="/" class="retour">← Retour</a>
+        </div>
+
+        <div class="contenu">
+            <div class="image">
+                {{if .Image}}
+                <img src="{{.Image}}" alt="{{.Album}}">
+                {{else}}
+                <div class="no-image">Pas d'image</div>
+                {{end}}
+            </div>
+
+            <div class="details">
+                <h1>{{.Nom}}</h1>
+                <h2>{{.Artiste}}</h2>
+
+                <div class="infos">
+                    <div class="info-ligne">
+                        <span class="label">Album:</span>
+                        <span class="valeur">{{.Album}}</span>
+                    </div>
+                    <div class="info-ligne">
+                        <span class="label">Date de sortie:</span>
+                        <span class="valeur">{{.DateSortie}}</span>
+                    </div>
+                </div>
+
+                <div class="boutons">
+                    <a href="{{.LienSpotify}}" target="_blank" class="bouton-spotify">
+                        🎧 Écouter sur Spotify
+                    </a>
+                    <a href="/album/damso" class="bouton-damso">
+                        💿 Albums de Damso
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

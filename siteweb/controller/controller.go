@@ -9,7 +9,7 @@ import (
 
 // AccueilHandler affiche la page d'accueil
 func AccueilHandler(w http.ResponseWriter, r *http.Request) {
-	tmpl, err := template.ParseFiles("siteweb/templates/welcome.html")
+	tmpl, err := template.ParseFiles("templates/welcome.html")
 	if err != nil {
 		log.Println("Erreur chargement template welcome:", err)
 		http.Error(w, "Erreur serveur", http.StatusInternalServerError)
@@ -35,7 +35,7 @@ func DamsoHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Charger et exécuter le template
-	tmpl, err := template.ParseFiles("siteweb/templates/damso.html")
+	tmpl, err := template.ParseFiles("templates/damso.html")
 	if err != nil {
 		log.Println("Erreur chargement template damso:", err)
 		http.Error(w, "Erreur serveur", http.StatusInternalServerError)
@@ -56,7 +56,7 @@ func MaladresseHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Charger et exécuter le template
-	tmpl, err := template.ParseFiles("siteweb/templates/maladresse.html")
+	tmpl, err := template.ParseFiles("templates/maladresse.html")
 	if err != nil {
 		log.Println("Erreur chargement template maladresse:", err)
 		http.Error(w, "Erreur serveur", http.StatusInternalServerError)
